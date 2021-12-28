@@ -109,7 +109,9 @@ class AboutPage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FloatingActionButton.extended(
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      await launch('https://github.com/tonynikolaidis/mycovidpass');
+                                    },
                                     heroTag: 'view_on_github',
                                     label: Text(
                                       'View on GitHub',
