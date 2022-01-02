@@ -24,7 +24,8 @@ class Storage {
     List<String>? codes = _storage.getStringList('codes');
     certificates = codes;
     numberOfCertificates = certificates!.length;
-    print('Storage class: ' + certificates.toString());
+    // print('Storage class: ' + certificates.toString());
+    // print('Number of certificates: ' + numberOfCertificates.toString());
   }
 
   static List<String>? getItem(String key) {
