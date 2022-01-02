@@ -45,30 +45,36 @@ class CallToActionButton extends StatelessWidget {
     }
 
     if (extended) {
-      return FloatingActionButton.extended(
-        onPressed: onPressed,
-        heroTag: heroTag,
-        label: Text(
-          label,
-          style: TextStyle(fontSize: 16),
+      return Theme(
+        data: Theme.of(context).copyWith(highlightColor: Colors.transparent),
+        child: FloatingActionButton.extended(
+          onPressed: onPressed,
+          heroTag: heroTag,
+          label: Text(
+            label,
+            style: TextStyle(fontSize: 16),
+          ),
+          icon: icon,
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
+          splashColor: splashColor,
+          elevation: elevation,
+          highlightElevation: 0,
         ),
-        icon: icon,
-        backgroundColor: backgroundColor,
-        foregroundColor: foregroundColor,
-        splashColor: splashColor,
-        elevation: elevation,
-        highlightElevation: 0,
       );
     } else {
-      return FloatingActionButton(
-        onPressed: onPressed,
-        heroTag: heroTag,
-        child: icon,
-        backgroundColor: backgroundColor,
-        foregroundColor: foregroundColor,
-        splashColor: splashColor,
-        elevation: elevation,
-        highlightElevation: 0,
+      return Theme(
+        data: Theme.of(context).copyWith(highlightColor: Colors.transparent),
+        child: FloatingActionButton(
+          onPressed: onPressed,
+          heroTag: heroTag,
+          child: icon,
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
+          splashColor: splashColor,
+          elevation: elevation,
+          highlightElevation: 0,
+        ),
       );
     }
   }
