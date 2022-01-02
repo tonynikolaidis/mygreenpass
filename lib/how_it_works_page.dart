@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mycovidpass/main.dart';
 
@@ -16,6 +15,13 @@ class HowItWorks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var aspectRatio = MediaQuery.of(context).size.aspectRatio;
+    double spacing = 48;
+
+    if (aspectRatio >= 9/16) {
+      spacing = 32;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -53,20 +59,20 @@ class HowItWorks extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 5 / 100,
+                      height: spacing,
                     ),
                     SimpleShadow(
                       child: Image(
                         image: AssetImage('assets/phone_over_certificate.png'),
                         width: MediaQuery.of(context).size.width * 1.5 / 3,
                       ),
-                      opacity: 0.5,
+                      opacity: 0,
                       color: COLOR_SHADOW,
                       offset: Offset(0, 12),
                       sigma: 32,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 7.5 / 100,
+                      height: spacing,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -83,28 +89,25 @@ class HowItWorks extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height:
-                      MediaQuery.of(context).size.height * 3 / 100,
+                      height: 8 // MediaQuery.of(context).size.height * 3 / 100,
                     ),
                     HowItWorksItem(
                         number: 1,
                         text: 'Hold your smartphone camera over the QR code on your Digital Covid Certificate to scan it.'
                     ),
                     SizedBox(
-                      height:
-                      MediaQuery.of(context).size.height * 2 / 100,
+                      height: 18 // MediaQuery.of(context).size.height * 2 / 100,
                     ),
                     HowItWorksItem(
                         number: 2,
-                        text: 'A preview of the COVID certificate will appear. Tap ‘Add’ to add the certificate to the app.'
+                        text: 'A preview of the Covid certificate will appear. Tap ‘Save’ to add the certificate to the app.'
                     ),
                     SizedBox(
-                      height:
-                      MediaQuery.of(context).size.height * 2 / 100,
+                      height: 18 // MediaQuery.of(context).size.height * 2 / 100,
                     ),
                     HowItWorksItem(
                         number: 3,
-                        text: 'Done! If you want to add more COVID certificates, you can do so by pressing the ‘Add’ button in the passes page.'
+                        text: 'Done! If you want to add more certificates, press ‘Add’ in the certificates page located at the bottom right.'
                     ),
                     SizedBox(
                       height: bottomOffset,
