@@ -156,6 +156,8 @@ class _QrScannerState extends State<QrScanner> {
                         // SizedBox(height: MediaQuery.of(context).size.height * 0.15 / 10),
                         Spacer(),
                         MaterialButton(
+                          highlightColor: Color.fromRGBO(0, 33, 133, 1.0),
+                          splashColor: COLOR_BLUE_SPLASH,
                           onPressed: () {
                             Navigator.push(
                                 context,
