@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:country_codes/country_codes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,8 @@ import 'utils/storage.dart';
 late Widget home;
 double bottomOffset = 0;
 bool shouldSetBottomOffset = true;
+
+var testDatabase;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +38,10 @@ void main() async {
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
   ));
+
+  var jsonText = await rootBundle.loadString('data/diagnostic_medical_devices.json');
+  var data = json.decode(jsonText);
+  testDatabase = data['deviceList'];
 
   runApp(AppWidget());
 }
