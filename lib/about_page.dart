@@ -1,11 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'main.dart';
 import 'utils/constants.dart';
 import 'utils/navigation_bar_color.dart';
 import 'utils/white_background_painter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({
@@ -50,7 +51,7 @@ class AboutPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: MediaQuery.of(context).size.width * 5 / 100,
+                        height: 18,
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width * 90 / 100,
@@ -64,18 +65,48 @@ class AboutPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                  'Digital Covid Certificates are not travel documents.\n',
+                                  'myCovidPass is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the European Union or the European Commission, or any of their affiliates.\n',
                                   style: TextStyle(fontSize: 16)),
-                              Text(
-                                  'Always check the public health measures and restrictions that apply before travelling.',
-                                  style: TextStyle(fontSize: 16))
+                              Linkify(
+                                onOpen: (link) async {
+                                  if (await canLaunch(link.url)) {
+                                    await launch(link.url);
+                                  } else {
+                                    throw 'Could not launch $link';
+                                  }
+                                },
+                                text: "Our Privacy Policy can be found here:\nhttps://www.tonynikolaidis.com/myCovidPass/index.html",
+                                style: TextStyle(fontSize: 16),
+                                linkStyle: TextStyle(fontSize: 16, color: COLOR_BLUE),
+                                options: LinkifyOptions(humanize: false),
+                              )
                             ],
                           ),
                         ),
                       ),
+                      // SizedBox(
+                      //   height: 18,
+                      // ),
                       SizedBox(
                         height: 32,
                       ),
+                      // SizedBox(
+                      //   height: 64,
+                      // ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     Image(
+                      //       image: AssetImage('assets/logo.png'),
+                      //       width: MediaQuery.of(context).size.width *
+                      //           60 /
+                      //           100,
+                      //     ),
+                      //   ],
+                      // ),
+                      // SizedBox(
+                      //   height: 64,
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -108,25 +139,30 @@ class AboutPage extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FloatingActionButton.extended(
-                                    onPressed: () async {
-                                      await launch('https://github.com/tonynikolaidis/mycovidpass');
-                                    },
-                                    heroTag: 'view_on_github',
-                                    label: Text(
-                                      'View on GitHub',
-                                      style: TextStyle(fontSize: 16),
+                                  Theme(
+                                    data: Theme.of(context).copyWith(
+                                        highlightColor: Colors.transparent),
+                                    child: FloatingActionButton.extended(
+                                      onPressed: () async {
+                                        await launch(
+                                            'https://github.com/tonynikolaidis/mycovidpass');
+                                      },
+                                      heroTag: 'view_on_github',
+                                      label: Text(
+                                        'View on GitHub',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      icon: SvgPicture.asset(
+                                        'assets/github.svg',
+                                        height: 24,
+                                        color: Colors.white,
+                                      ),
+                                      backgroundColor: COLOR_BLUE,
+                                      foregroundColor: Colors.white,
+                                      splashColor: COLOR_BLUE_SPLASH,
+                                      elevation: 0,
+                                      highlightElevation: 5,
                                     ),
-                                    icon: Image(
-                                      image: AssetImage('assets/github.png'),
-                                      height: 24,
-                                      color: Colors.white,
-                                    ),
-                                    backgroundColor: COLOR_BLUE,
-                                    foregroundColor: Colors.white,
-                                    splashColor: COLOR_BLUE_SPLASH,
-                                    elevation: 0,
-                                    highlightElevation: 5,
                                   ),
                                 ],
                               )
@@ -158,7 +194,7 @@ class AboutPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'The app was written by Tony Nikolaidis to store Digital Covid Certificates on mobile phones.',
+                                  'The app was written by Tony Nikolaidis to store Digital Covid Certificates digitally on mobile devices.',
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 SizedBox(
@@ -168,63 +204,80 @@ class AboutPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    FloatingActionButton(
-                                      onPressed: () async {
-                                        await launch('https://github.com/tonynikolaidis');
-                                      },
-                                      heroTag: 'github',
-                                      child: Image(
-                                        image: AssetImage('assets/github.png'),
-                                        height: 24,
-                                        color: Colors.white,
+                                    Theme(
+                                      data: Theme.of(context).copyWith(
+                                          highlightColor: Colors.transparent),
+                                      child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await launch(
+                                              'https://github.com/tonynikolaidis');
+                                        },
+                                        heroTag: 'github',
+                                        child: SvgPicture.asset(
+                                          'assets/github.svg',
+                                          height: 24,
+                                          color: Colors.white,
+                                        ),
+                                        backgroundColor:
+                                            Color.fromRGBO(20, 25, 30, 1.0),
+                                        foregroundColor: Colors.white,
+                                        splashColor:
+                                            Color.fromRGBO(52, 57, 63, 1.0),
+                                        elevation: 0,
+                                        highlightElevation: 5,
                                       ),
-                                      backgroundColor:
-                                          Color.fromRGBO(20, 25, 30, 1.0),
-                                      foregroundColor: Colors.white,
-                                      splashColor: COLOR_BLUE_SPLASH,
-                                      elevation: 0,
-                                      highlightElevation: 5,
                                     ),
                                     SizedBox(
                                       width: 18,
                                     ),
-                                    FloatingActionButton(
-                                      onPressed: () async {
-                                        await launch('https://twitter.com/tonynikolaidis');
-                                      },
-                                      heroTag: 'twitter',
-                                      child: Image(
-                                        image: AssetImage('assets/twitter.png'),
-                                        height: 24,
-                                        color: Colors.white,
+                                    Theme(
+                                      data: Theme.of(context).copyWith(
+                                          highlightColor: Colors.transparent),
+                                      child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await launch(
+                                              'https://twitter.com/tonynikolaidis');
+                                        },
+                                        heroTag: 'twitter',
+                                        child: SvgPicture.asset(
+                                          'assets/twitter.svg',
+                                          height: 24,
+                                          color: Colors.white,
+                                        ),
+                                        backgroundColor:
+                                            Color.fromRGBO(29, 155, 240, 1.0),
+                                        foregroundColor: Colors.white,
+                                        splashColor:
+                                            Color.fromRGBO(66, 170, 242, 1.0),
+                                        elevation: 0,
+                                        highlightElevation: 5,
                                       ),
-                                      backgroundColor:
-                                          Color.fromRGBO(1, 161, 242, 1.0),
-                                      foregroundColor: Colors.white,
-                                      splashColor: COLOR_BLUE_SPLASH,
-                                      elevation: 0,
-                                      highlightElevation: 5,
                                     ),
                                     SizedBox(
                                       width: 18,
                                     ),
-                                    FloatingActionButton(
-                                      onPressed: () async {
-                                        await launch('https://www.linkedin.com/in/tony-nikolaidis-a86aba181/');
-                                      },
-                                      heroTag: 'linkedin',
-                                      child: Image(
-                                        image:
-                                            AssetImage('assets/linkedin.png'),
-                                        height: 24,
-                                        color: Colors.white,
+                                    Theme(
+                                      data: Theme.of(context).copyWith(
+                                          highlightColor: Colors.transparent),
+                                      child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await launch(
+                                              'https://www.linkedin.com/in/tony-nikolaidis-a86aba181/');
+                                        },
+                                        heroTag: 'linkedin',
+                                        child: SvgPicture.asset(
+                                          'assets/linkedin.svg',
+                                          height: 24,
+                                          color: Colors.white,
+                                        ),
+                                        backgroundColor:
+                                            Color.fromRGBO(10, 102, 194, 1.0),
+                                        foregroundColor: Colors.white,
+                                        splashColor:
+                                            Color.fromRGBO(14, 119, 212, 1.0),
+                                        elevation: 0,
+                                        highlightElevation: 5,
                                       ),
-                                      backgroundColor:
-                                          Color.fromRGBO(10, 102, 194, 1.0),
-                                      foregroundColor: Colors.white,
-                                      splashColor: COLOR_BLUE_SPLASH,
-                                      elevation: 0,
-                                      highlightElevation: 5,
                                     ),
                                   ],
                                 ),
@@ -234,39 +287,30 @@ class AboutPage extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    FloatingActionButton.extended(
-                                      onPressed: () async {
-                                        await launch('https://www.tonynikolaidis.com');
-                                      },
-                                      heroTag: 'visit_website',
-                                      label: Text(
-                                        'Visit website',
-                                        style: TextStyle(fontSize: 16),
+                                    Theme(
+                                      data: Theme.of(context).copyWith(
+                                          highlightColor: Colors.transparent),
+                                      child: FloatingActionButton.extended(
+                                        onPressed: () async {
+                                          await launch(
+                                              'https://www.tonynikolaidis.com');
+                                        },
+                                        heroTag: 'visit_website',
+                                        label: Text(
+                                          'Visit website',
+                                          style: TextStyle(fontSize: 16),
+                                        ),
+                                        icon: SvgPicture.asset(
+                                          'assets/link.svg',
+                                          height: 24,
+                                          color: Colors.white,
+                                        ),
+                                        backgroundColor: COLOR_BLUE,
+                                        foregroundColor: Colors.white,
+                                        splashColor: COLOR_BLUE_SPLASH,
+                                        elevation: 0,
+                                        highlightElevation: 5,
                                       ),
-                                      icon: Image(
-                                        image: AssetImage('assets/link.png'),
-                                        height: 20,
-                                        color: Colors.white,
-                                      ),
-                                      backgroundColor: COLOR_BLUE,
-                                      foregroundColor: Colors.white,
-                                      splashColor: COLOR_BLUE_SPLASH,
-                                      elevation: 0,
-                                      highlightElevation: 5,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 64,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image(
-                                      image: AssetImage('assets/logo.png'),
-                                      width: MediaQuery.of(context).size.width *
-                                          50 /
-                                          100,
                                     ),
                                   ],
                                 ),
@@ -276,6 +320,26 @@ class AboutPage extends StatelessWidget {
                               ])),
                     ],
                   ),
-                ]))));
+                  SizedBox(
+                    height: 32,
+                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Image(
+                  //       image: AssetImage('assets/logo.png'),
+                  //       width: MediaQuery.of(context).size.width *
+                  //           60 /
+                  //           100,
+                  //     ),
+                  //   ],
+                  // ),
+                  // SizedBox(
+                  //   height: 32,
+                  // ),
+                ])
+            )
+        )
+    );
   }
 }
