@@ -7,6 +7,8 @@ import 'about_page.dart';
 import 'utils/constants.dart';
 import 'scan_qr_code_page.dart';
 import 'utils/navigation_bar_color.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class GetStartedPage extends StatefulWidget {
   GetStartedPage({Key? key}) : super(key: key);
@@ -24,8 +26,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 5),
         child: Container(
-          height: 45,
-          width: 45,
+          height: 56,
+          width: 56,
           child: FittedBox(
             child: FloatingActionButton(
               onPressed: () {
@@ -33,7 +35,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                     MaterialPageRoute(builder: (context) => AboutPage()));
               },
               heroTag: 'info',
-              child: Icon(Icons.info_outline_rounded, size: 30),
+              child: Icon(Icons.info_outline_rounded, size: 25),
               backgroundColor: Colors.white,
               foregroundColor: COLOR_BLACK,
               // splashColor: Color.fromRGBO(0, 0, 0, 0),
@@ -57,17 +59,22 @@ class _GetStartedPageState extends State<GetStartedPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image(
-                  image: AssetImage('assets/app_icon_white.png'),
-                  height: 55, // previously 80
-                ),
+                // SvgPicture.asset(
+                //     'assets/european_union_logo.svg',
+                //     semanticsLabel: 'App logo'
+                // ),
+                SvgPicture.asset('assets/app_icon.svg', semanticsLabel: 'App logo', width: 48,),
+                // Image(
+                //   image: AssetImage('assets/app_icon_checkmark.png'),
+                //   height: 55, // previously 80
+                // ),
                 Padding(
                   padding: const EdgeInsets.only(left: 12),
                   child: Text(
                     'myCovidPass',
                     style: TextStyle(
                         fontWeight: FontWeight.w300,
-                        fontSize: 30), // previously 35
+                        fontSize: 26.6), // previously 35
                     textScaleFactor: 1.0,
                   ),
                 )
@@ -77,10 +84,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
               height: MediaQuery.of(context).size.height * 1.5 / 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70),
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.17),
               child: Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Add certificate',
