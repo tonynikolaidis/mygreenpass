@@ -25,3 +25,6 @@ doc/api/
 .flutter-plugins-dependencies
 /android/key.properties
 /android/app/upload-keystore.jks
+
+assets/app-icon.ai
+assets/logo.ai
