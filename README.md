@@ -1,6 +1,6 @@
-# mycovidpass
+# mygreenpass
 
-Application that stores Digital Covid Certificates digitally.
+Simple app that stores European Digital Green Certificates digitally.
 
 ## Getting Started
 
