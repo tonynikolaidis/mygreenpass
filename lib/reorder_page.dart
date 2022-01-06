@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:mycovidpass/certificates_page.dart';
+import 'certificates_page.dart';
 
 import 'certificate_details_page.dart';
 import 'main.dart';

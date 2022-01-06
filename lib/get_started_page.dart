@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mycovidpass/utils/call_to_action_button.dart';
-import 'package:mycovidpass/utils/blue_curve_white_background_painter.dart';
+import 'utils/call_to_action_button.dart';
+import 'utils/blue_curve_white_background_painter.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'about_page.dart';
 import 'utils/constants.dart';
@@ -59,25 +59,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // SvgPicture.asset(
-                //     'assets/european_union_logo.svg',
-                //     semanticsLabel: 'App logo'
-                // ),
-                SvgPicture.asset('assets/app_icon.svg', semanticsLabel: 'App logo', width: 48,),
-                // Image(
-                //   image: AssetImage('assets/app_icon_checkmark.png'),
-                //   height: 55, // previously 80
-                // ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12),
-                  child: Text(
-                    'myCovidPass',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 26.6), // previously 35
-                    textScaleFactor: 1.0,
-                  ),
-                )
+                SvgPicture.asset('assets/logo.svg', semanticsLabel: 'App logo', width: MediaQuery.of(context).size.width * 0.6,),
               ],
             ),
             SizedBox(
@@ -103,7 +85,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                     height: 10,
                   ),
                   Text(
-                    'Add your Digital Covid Certificate to myCovidPass by scanning its QR code.',
+                    'Add your Digital Green Certificate to myGreenPass by scanning its QR code.',
                     style: TextStyle(fontSize: 16),
                   ),
                 ],

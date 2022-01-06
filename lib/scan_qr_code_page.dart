@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mycovidpass/utils/custom_app_bar.dart';
-import 'package:mycovidpass/utils/qr_scanner.dart';
+import 'utils/custom_app_bar.dart';
+import 'utils/qr_scanner.dart';
 
 import 'utils/constants.dart';
 import 'utils/navigation_bar_color.dart';

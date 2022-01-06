@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
-class CovidPassItem extends StatelessWidget {
+class GreenPassItem extends StatelessWidget {
   final String header;
   final String body;
   final CrossAxisAlignment alignment;
   final TextAlign textAlign;
 
-  const CovidPassItem({
+  const GreenPassItem({
     Key? key,
     required this.header,
     required this.body,

@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'package:mycovidpass/main.dart';
+import '../main.dart';
 
 import 'decode_qr_code.dart';
 

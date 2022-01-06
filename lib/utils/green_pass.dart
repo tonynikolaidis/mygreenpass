@@ -5,27 +5,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:mycovidpass/certificate_details_page.dart';
-import 'package:mycovidpass/utils/extract_qr_code_data.dart';
+import '../certificate_details_page.dart';
+import '../utils/extract_qr_code_data.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../certificates_page.dart';
 import 'constants.dart';
-import 'covid_pass_item.dart';
+import 'green_pass_item.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CovidPass extends StatefulWidget {
+class GreenPass extends StatefulWidget {
   final String code;
 
-  const CovidPass({Key? key, required this.code}) : super(key: key);
+  const GreenPass({Key? key, required this.code}) : super(key: key);
 
   @override
-  _CovidPassState createState() => _CovidPassState();
+  _GreenPassState createState() => _GreenPassState();
 }
 
-class _CovidPassState extends State<CovidPass> {
+class _GreenPassState extends State<GreenPass> {
   final GlobalKey globalKey = GlobalKey();
 
   @override
@@ -184,13 +184,7 @@ class _CovidPassState extends State<CovidPass> {
                                       Column(
                                         children: [
                                           Container(
-                                              // height: 30,
-                                              // width: 30,
                                               child: SvgPicture.asset('assets/european_union_logo.svg', height: 30),
-                                              // child: Image(
-                                              //   image: AssetImage(
-                                              //       'assets/european_union_logo.png'),
-                                              // )
                                           ),
                                         ],
                                       ),
@@ -224,7 +218,7 @@ class _CovidPassState extends State<CovidPass> {
                               decoration: BoxDecoration(
                                   // border: Border.all(color: Colors.blue)
                                   ),
-                              child: CovidPassItem(
+                              child: GreenPassItem(
                                   header: 'STATE',
                                   body: '${data['country']}',
                                   alignment: CrossAxisAlignment.center,
@@ -243,14 +237,14 @@ class _CovidPassState extends State<CovidPass> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CovidPassItem(
+                            GreenPassItem(
                                 header: 'SURNAME/NAME',
                                 body:
                                     '${data['lastNameT']} ${data['firstNameT']}',
                                 alignment: CrossAxisAlignment.start,
                                 textAlign: TextAlign.start),
                             Spacer(),
-                            CovidPassItem(
+                            GreenPassItem(
                               header: 'DATE OF BIRTH',
                               body: '${data['dateOfBirth']}',
                               alignment: CrossAxisAlignment.end,
@@ -269,13 +263,13 @@ class _CovidPassState extends State<CovidPass> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CovidPassItem(
+                            GreenPassItem(
                                 header: h0,
                                 body: c0,
                                 alignment: CrossAxisAlignment.start,
                                 textAlign: TextAlign.start),
                             Spacer(),
-                            CovidPassItem(
+                            GreenPassItem(
                                 header: 'VALID UNTIL',
                                 body: validUntil,
                                 alignment: CrossAxisAlignment.end,
@@ -293,7 +287,7 @@ class _CovidPassState extends State<CovidPass> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CovidPassItem(
+                            GreenPassItem(
                                 header: h1,
                                 body: c1,
                                 alignment: CrossAxisAlignment.start,
@@ -301,7 +295,7 @@ class _CovidPassState extends State<CovidPass> {
                             Spacer(),
                             Visibility(
                               visible: isVisible,
-                              child: CovidPassItem(
+                              child: GreenPassItem(
                                   header: h2,
                                   body: c2,
                                   alignment: CrossAxisAlignment.end,

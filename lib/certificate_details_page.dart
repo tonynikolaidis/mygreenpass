@@ -2,10 +2,10 @@ import 'package:country_codes/country_codes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mycovidpass/utils/navigation_bar_color.dart';
-import 'package:mycovidpass/utils/recovery_details.dart';
-import 'package:mycovidpass/utils/test_details.dart';
-import 'package:mycovidpass/utils/vaccination_details.dart';
+import 'utils/navigation_bar_color.dart';
+import 'utils/recovery_details.dart';
+import 'utils/test_details.dart';
+import 'utils/vaccination_details.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -269,9 +269,9 @@ class CertificateDetailsPage extends ConsumerWidget {
                               Text(
                                   'This certificate is not a travel document.\n',
                                   style: TextStyle(fontSize: 16)),
-                              Text(
-                                  'The scientific evidence on COVID-19 vaccination, testing and recovery continues to evolve, including with regard to new virus variants of concern.\n',
-                                  style: TextStyle(fontSize: 16)),
+                              // Text(
+                              //     'The scientific evidence on COVID-19 vaccination, testing and recovery continues to evolve, including with regard to new virus variants of concern.\n',
+                              //     style: TextStyle(fontSize: 16)),
                               Text(
                                   'Before travelling, please check the applicable public health measure and related restrictions applicable at the point of destination.\n',
                                   style: TextStyle(fontSize: 16)),

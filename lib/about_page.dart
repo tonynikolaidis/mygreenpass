@@ -65,7 +65,7 @@ class AboutPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                  'myCovidPass is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the European Union or the European Commission, or any of their affiliates.\n',
+                                  'myGreenPass is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the European Union or the European Commission, or any of their affiliates.\n',
                                   style: TextStyle(fontSize: 16)),
                               Linkify(
                                 onOpen: (link) async {
@@ -75,7 +75,7 @@ class AboutPage extends StatelessWidget {
                                     throw 'Could not launch $link';
                                   }
                                 },
-                                text: "Our Privacy Policy can be found here:\nhttps://www.tonynikolaidis.com/myCovidPass/index.html",
+                                text: "Our Privacy Policy can be found here:\nhttps://www.tonynikolaidis.com/myGreenPass/index.html",
                                 style: TextStyle(fontSize: 16),
                                 linkStyle: TextStyle(fontSize: 16, color: COLOR_BLUE),
                                 options: LinkifyOptions(humanize: false),
@@ -130,7 +130,7 @@ class AboutPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'myCovidPass is an open-source project created with Flutter. Its code can be found on GitHub by clicking the button below.',
+                                'myGreenPass is an open-source project created with Flutter. Its code can be found on GitHub by clicking the button below.',
                                 style: TextStyle(fontSize: 16),
                               ),
                               SizedBox(
@@ -145,7 +145,7 @@ class AboutPage extends StatelessWidget {
                                     child: FloatingActionButton.extended(
                                       onPressed: () async {
                                         await launch(
-                                            'https://github.com/tonynikolaidis/mycovidpass');
+                                            'https://github.com/tonynikolaidis/mygreenpass');
                                       },
                                       heroTag: 'view_on_github',
                                       label: Text(
@@ -194,7 +194,7 @@ class AboutPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'The app was written by Tony Nikolaidis to store Digital Covid Certificates digitally on mobile devices.',
+                                  'The app was written by Tony Nikolaidis to store Digital Green Certificates digitally on mobile devices.',
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 SizedBox(

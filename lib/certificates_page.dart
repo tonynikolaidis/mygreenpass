@@ -4,17 +4,17 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:mycovidpass/reorder_page.dart';
-import 'package:mycovidpass/scan_qr_code_page.dart';
-import 'package:mycovidpass/utils/blue_curve_white_background_painter.dart';
-import 'package:mycovidpass/utils/call_to_action_button.dart';
-import 'package:mycovidpass/utils/covid_pass.dart';
+import 'reorder_page.dart';
+import 'scan_qr_code_page.dart';
+import 'utils/blue_curve_white_background_painter.dart';
+import 'utils/call_to_action_button.dart';
+import 'utils/green_pass.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:mycovidpass/utils/storage.dart';
+import 'utils/storage.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mycovidpass/utils/white_background_painter.dart';
+import 'utils/white_background_painter.dart';
 
 import 'about_page.dart';
 import 'main.dart';
@@ -120,7 +120,7 @@ class CertificatesPageState extends ConsumerState<CertificatesPage> {
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: CovidPass(code: codes[index]),
+                            child: GreenPass(code: codes[index]),
                           );
                         },
                         itemCount: codes.length,
@@ -208,21 +208,7 @@ class CertificatesPageState extends ConsumerState<CertificatesPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('assets/app_icon.svg', height: 45),
-                          // Image(
-                          //   image: AssetImage('assets/app_icon_checkmark.png'),
-                          //   height: 45, // previously 60
-                          // ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 11),
-                            child: Text(
-                              'myCovidPass',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 25), // previously 35
-                              textScaleFactor: 1.0,
-                            ),
-                          ),
+                          SvgPicture.asset('assets/logo.svg', width: MediaQuery.of(context).size.width * 0.54),
                           Spacer(),
                           Container(
                             height: 56, // 45

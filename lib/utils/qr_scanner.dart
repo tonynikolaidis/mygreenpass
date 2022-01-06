@@ -3,19 +3,19 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mycovidpass/certificate_details_page.dart';
+import '../certificate_details_page.dart';
 
-import 'package:mycovidpass/certificates_page.dart';
-import 'package:mycovidpass/how_it_works_page.dart';
-import 'package:mycovidpass/main.dart';
-import 'package:mycovidpass/utils/decode_qr_code.dart';
-import 'package:mycovidpass/utils/storage.dart';
+import '../certificates_page.dart';
+import '../how_it_works_page.dart';
+import '../main.dart';
+import '../utils/decode_qr_code.dart';
+import '../utils/storage.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:country_codes/country_codes.dart';
 
-import 'package:mycovidpass/utils/call_to_action_button.dart';
-import 'package:mycovidpass/utils/extract_qr_code_data.dart';
-import 'package:mycovidpass/utils/white_background_painter.dart';
+import '../utils/call_to_action_button.dart';
+import '../utils/extract_qr_code_data.dart';
+import '../utils/white_background_painter.dart';
 
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -144,7 +144,7 @@ class _QrScannerState extends State<QrScanner> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 70),
                           child: Text(
-                            'Scan the QR code on your COVID certificate.',
+                            'Scan the QR code on your Green certificate.',
                             textScaleFactor: 1.0,
                             style: TextStyle(
                                 color: Colors.white,

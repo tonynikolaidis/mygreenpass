@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycovidpass/main.dart';
+import 'main.dart';
 
 import 'utils/how_it_works_item.dart';
 import 'utils/navigation_bar_color.dart';
@@ -93,14 +93,14 @@ class HowItWorks extends StatelessWidget {
                     ),
                     HowItWorksItem(
                         number: 1,
-                        text: 'Hold your smartphone camera over the QR code on your Digital Covid Certificate to scan it.'
+                        text: 'Hold your smartphone camera over the QR code on your Digital Green Certificate to scan it.'
                     ),
                     SizedBox(
                       height: 18 // MediaQuery.of(context).size.height * 2 / 100,
                     ),
                     HowItWorksItem(
                         number: 2,
-                        text: 'A preview of the Covid certificate will appear. Tap ‘Save’ to add the certificate to the app.'
+                        text: 'A preview of the Green certificate will appear. Tap ‘Save’ to add the certificate to the app.'
                     ),
                     SizedBox(
                       height: 18 // MediaQuery.of(context).size.height * 2 / 100,
