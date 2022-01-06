@@ -4,7 +4,7 @@ import 'package:country_codes/country_codes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mycovidpass/certificates_page.dart';
+import 'certificates_page.dart';
 import 'get_started_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -60,7 +60,7 @@ class AppWidget extends StatelessWidget {
           DefaultWidgetsLocalizations.delegate,
           DefaultCupertinoLocalizations.delegate,
         ],
-        title: 'myCovidPass',
+        title: 'myGreenPass',
         home: home,
       ),
     );
