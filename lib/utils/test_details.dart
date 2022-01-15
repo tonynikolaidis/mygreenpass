@@ -11,7 +11,7 @@ class TestDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(data);
+    // print(data);
 
     bool testName = true;
     if (data['t']['nm'] == null) {

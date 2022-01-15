@@ -11,7 +11,7 @@ class VaccinationDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(data);
+    // print(data);
 
     return Column(
       children: [
