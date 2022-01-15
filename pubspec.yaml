@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+4
+version: 1.1.0+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -65,6 +65,12 @@ dependencies:
   card_swiper: ^1.0.4
   flutter_reorderable_list: ^1.2.0
   smooth_page_indicator: ^1.0.0+2
+  path_provider: ^2.0.8
+  file_picker: ^4.3.1
+  pdf_render: ^1.0.19
+  google_ml_kit: ^0.7.3
+  flutter_speed_dial: ^5.0.0+1
+  loading_overlay: ^0.3.0
 
 dev_dependencies:
   flutter_test:
@@ -110,12 +116,8 @@ flutter:
       fonts:
         - asset: fonts/RobotoMono-Regular.ttf
           weight: 400
-        - asset: fonts/RobotoMono-Medium.ttf
-          weight: 500
         - asset: fonts/RobotoMono-SemiBold.ttf
           weight: 600
-        - asset: fonts/RobotoMono-Bold.ttf
-          weight: 700
 
 # flutter pub run flutter_launcher_icons:main
 flutter_icons:
