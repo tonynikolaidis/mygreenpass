@@ -1,4 +1,4 @@
-package com.tonynikolaidis.mycovidpass
+package com.tonynikolaidis.mygreenpass
 
 import io.flutter.embedding.android.FlutterActivity
 
