@@ -1,7 +1,6 @@
-import 'package:country_codes/country_codes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mygreenpass/utils/scan_qr_code_from_file.dart';
 import 'utils/navigation_bar_color.dart';
 import 'utils/recovery_details.dart';
 import 'utils/test_details.dart';
@@ -11,10 +10,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'certificates_page.dart';
 import 'get_started_page.dart';
-import 'main.dart';
 import 'utils/call_to_action_button.dart';
 import 'utils/constants.dart';
-import 'utils/qr_scanner.dart';
 import 'utils/storage.dart';
 import 'utils/white_background_painter.dart';
 
@@ -61,6 +58,11 @@ class CertificateDetailsPage extends ConsumerWidget {
                   (route) => route.isCurrent);
 
               NavigationBarColor.changeTo('blue');
+            } else {
+              showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => ScanQrCodeFromFile.certificateAlreadyExists(context),
+              );
             }
           });
     } else {
