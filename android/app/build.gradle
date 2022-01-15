@@ -58,7 +58,33 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            aaptOptions {
+                ignoreAssetsPattern '!mlkit_pose:!mlkit_label_default_model:!hobbes.tflite:!mlkit_odt_localizer:!mlkit_odt_default_classifier:'
+            }
         }
+        debug {
+            signingConfig signingConfigs.debug
+            aaptOptions {
+                ignoreAssetsPattern '!mlkit_pose:!mlkit_label_default_model:!hobbes.tflite:!mlkit_odt_localizer:!mlkit_odt_default_classifier:'
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/**/libtranslate_jni.so'
+        exclude 'lib/**/libdigitalink.so'
+        exclude 'lib/**/libxeno_native.so'
+        exclude 'lib/**/libmlkitcommonpipeline.so'
+        exclude 'lib/**/libbarhopper_v2.so'
+//        exclude 'lib/**/libbarhopper_v3.so'
+        exclude 'lib/**/libclassifier_jni.so'
+        exclude 'lib/**/libtextclassifier3_jni_tclib.so'
+        exclude 'lib/**/libface_detector_v2_jni.so'
+        exclude 'lib/**/libtensorflowlite_jni.so'
+        exclude 'lib/**/liblanguage_id_jni.so'
+        exclude 'lib/**/libpredictor_jni.so'
+        exclude 'lib/**/liblanguage_id_l2c_jni.so'
+//        exclude 'lib/**/libbbhelper.so'
     }
 }
 
