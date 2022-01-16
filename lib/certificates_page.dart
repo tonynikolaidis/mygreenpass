@@ -321,7 +321,7 @@ class CertificatesPageState extends ConsumerState<CertificatesPage> {
                                     SpeedDialChild(
                                         child: Icon(
                                             Icons.insert_drive_file_outlined),
-                                        label: 'Import file',
+                                        label: 'Import PDF',
                                         onTap: () async {
                                           FilePickerResult? result =
                                               await ScanQrCodeFromFile
