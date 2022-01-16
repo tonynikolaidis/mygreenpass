@@ -1,11 +1,11 @@
-import 'dart:io';
-import 'dart:ui';
+// import 'dart:io';
+// import 'dart:ui';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:google_ml_kit/google_ml_kit.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pdf_render/pdf_render.dart';
+// import 'package:google_ml_kit/google_ml_kit.dart';
+// import 'package:path_provider/path_provider.dart';
+// import 'package:pdf_render/pdf_render.dart';
 import 'package:barcode_finder/barcode_finder.dart';
 
 import 'constants.dart';
