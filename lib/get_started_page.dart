@@ -97,7 +97,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       height: 10,
                     ),
                     Text(
-                      'Add your Digital Green Certificate to myGreenPass by scanning its QR code or by importing it from the file system.',
+                      'Add your Digital Green Certificate to myGreenPass by scanning its QR code or by importing the PDF.',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
@@ -132,8 +132,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
                     CallToActionButton(
                         extended: true,
                         disabled: false,
-                        heroTag: 'import_file',
-                        label: 'Import file',
+                        heroTag: 'import_pdf',
+                        label: 'Import PDF',
                         icon: Icon(Icons.insert_drive_file_outlined),
                         onPressed: () async {
                           FilePickerResult? result = await ScanQrCodeFromFile.pickFile();
