@@ -73,9 +73,12 @@ class _GreenPassState extends State<GreenPass> {
       c1 = '${data['t']['tr'][0]}';
 
       h2 = 'TEST';
-      c2 = '${data['t']['tt'][0]}';
+      String testType = data['t']['tt'][0];
+      c2 = testType;
 
-      transformScale = 1.05;
+      if (testType != 'PCR') {
+        transformScale = 1.05;
+      }
     }
     else if (data.containsKey('r')) {
       header = 'RECOVERY';
