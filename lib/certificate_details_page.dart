@@ -146,7 +146,12 @@ class CertificateDetailsPage extends ConsumerWidget {
       header = 'VACCINATION';
     } else if (data.containsKey('t')) {
       header = 'TEST';
-      scaleFactor = 1.05;
+
+      String testType = data['t']['tt'][0];
+
+      if (testType != 'PCR') {
+        scaleFactor = 1.05;
+      }
     } else if (data.containsKey('r')) {
       header = 'RECOVERY';
       scaleFactor = 1.05;
