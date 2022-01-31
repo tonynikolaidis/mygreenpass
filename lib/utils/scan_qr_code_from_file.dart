@@ -89,7 +89,11 @@ class ScanQrCodeFromFile {
       return 'NOT_FOUND';
     }
 
-    String? code = await BarcodeFinder.scanFile(path: path);
+    String? code = await BarcodeFinder.scanFile(path: path).catchError(
+        (e) {
+          return e;
+        }
+    );
 
     if (code == null) {
       return 'NOT_FOUND';
