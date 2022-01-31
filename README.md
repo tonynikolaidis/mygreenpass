@@ -1,16 +1,25 @@
-# mygreenpass
+[![GitHub version](https://img.shields.io/badge/version-v1.1.2-brightgreen)](https://github.com/tonynikolaidis/mygreenpass/releases/tag/v1.1.2)
+[![GitHub version](https://img.shields.io/badge/Made%20with-Flutter-blue)](https://flutter.dev/)
 
-Simple app that stores European Digital Green Certificates digitally.
+# myGreenPass
 
-## Getting Started
+myGreenPass is a simple app that stores EU Digital Green Certificates digitally.
 
-This project is a starting point for a Flutter application.
+## About this app
 
-A few resources to get you started if this is your first Flutter project:
+To save your certificate on the app, you can either scan its QR code or import the PDF file.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+After the QR code has been decoded, a preview of the pass will appear displaying all details of the certificate and the option to save it.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+After saving, the digital pass will be added to the app's home screen.
+
+The generated pass shows all crucial information of the certificate such as the name of the holder and for example for the case of a test, the date that the test took place.
+
+Tapping on the digital pass will open the details page, where all information stored in the QR code is displayed in a tidy manner and the option to delete the pass is present. Deleting a pass means that it is completely removed from the device.
+
+Furthermore, tapping the QR code on the pass will enlarge it to make it easier to scan.
+
+## What's new
+
+- Fixed QR code size of PCR tests.
+- Increased minimum Android version to 6.0.
