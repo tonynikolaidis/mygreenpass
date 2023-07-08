@@ -1,6 +1,6 @@
 [![GitHub version](https://img.shields.io/badge/version-v1.1.2-brightgreen)](https://github.com/tonynikolaidis/mygreenpass/releases/tag/v1.1.2)
 [![Framework](https://img.shields.io/badge/made%20with-Flutter-blue)](https://flutter.dev/)
-[![Number of downloads](https://img.shields.io/badge/downloads-2k%2B-brightgreen)](https://play.google.com/store/apps/details?id=com.tonynikolaidis.mygreenpass)
+[![Number of downloads](https://img.shields.io/badge/downloads-10k%2B-brightgreen)](https://play.google.com/store/apps/details?id=com.tonynikolaidis.mygreenpass)
 
 <a href="https://play.google.com/store/apps/details?id=com.tonynikolaidis.mygreenpass"><img src="https://i.imgur.com/1IA1Viz.png" alt="myGreenPass"/></a>
 
